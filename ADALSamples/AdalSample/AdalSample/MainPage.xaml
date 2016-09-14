@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AdalSample"
+             x:Class="AdalSample.MainPage">
+
+
+  
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0"  />
+  </ContentPage.Padding>
+
+  <StackLayout>
+    <Label Text="Hello ADAL!"
+         VerticalOptions="Center"
+         HorizontalOptions="Center" />
+
+    <Button x:Name="button1" Text="Login" Clicked="OnButtonClicked"/>
+    
+  </StackLayout>
+
+
+
+
+</ContentPage>

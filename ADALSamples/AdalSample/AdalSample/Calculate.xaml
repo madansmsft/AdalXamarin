@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdalSample.Calculate">
+
+  <StackLayout>
+
+    <Entry Placeholder="Number1" Text="Numeric"  x:Name="Num1"/>
+    <Entry Placeholder="Number2" Text="Numeric"  x:Name="Num2"/>
+    
+    <Button x:Name="Add" Text="Add" Clicked="OnButtonClicked"/>
+    <Button x:Name="Power" Text="Power" Clicked="OnButtonClicked2"/>
+
+  </StackLayout>
+  
+</ContentPage>
