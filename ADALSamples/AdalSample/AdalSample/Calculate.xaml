@@ -9,7 +9,15 @@
     
   <StackLayout>
 
-    
+    <Label Text="Calculator"
+     VerticalOptions="Center"
+     HorizontalOptions="Center" />
+
+    <Label Text="Use the Slider to select the numbers and press the Add or Power Button."
+     VerticalOptions="Center"
+     HorizontalOptions="Center" />
+
+
     <Label Text="{Binding Path=Number1}"/>
     <Slider x:Name="slider1" Minimum="0" Maximum="100"  Value="{Binding Path=Number1, Mode=TwoWay}"/>
     <Label Text="{Binding Path=Number2}"/>

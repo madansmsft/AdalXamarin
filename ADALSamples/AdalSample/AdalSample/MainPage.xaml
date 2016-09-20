@@ -11,6 +11,7 @@
   </ContentPage.Padding>
 
   <StackLayout>
+    
     <Label Text="Welcome to Xamarin ADAL Sample!"
          VerticalOptions="Center"
          HorizontalOptions="Center" />
