@@ -1,57 +1,65 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
 using Xamarin.Forms;
+
 using AdalSamples.ViewModels;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace AdalSample
 {
     public partial class Calculate : ContentPage
     {
+        public CalculateViewModel CalcVM { get; set; }
+
+
         public Calculate()
         {
             InitializeComponent();
+            this.CalcVM = new CalculateViewModel(Configuration.BaseUri, Configuration.AccessToken);
+            activityIndicator.IsRunning = false;
+            BindingContext = this.CalcVM;
+
+            Messenger.Default.Register<string>(this, (string result) =>
+            {
+                DisplayAlert("Message From ViewModel", result, "OK");
+            });
+
+
         }
 
-        async void OnButtonClicked(object sender, EventArgs args)
-        {
+        //async void OnButtonClicked(object sender, EventArgs args)
+        //{
             
 
-            var vm = new CalculateViewModel(Configuration.BaseUri, Configuration.AccessToken);
-            vm.Number1 = Convert.ToInt32( Num1.Text);
-            vm.Number2 = Convert.ToInt32( Num2.Text);
+        //    //vm.Number1 = Convert.ToInt32( Num1.Text);
+        //    //vm.Number2 = Convert.ToInt32( Num2.Text);
 
            
 
 
-            await vm.AddNumbersExecute();
+        //    //await vm.AddNumbersExecute();
 
-            await DisplayAlert("result", vm.Result, "OK");
-
-
-        }
-
-        async void OnButtonClicked2(object sender, EventArgs args)
-        {
+        //    //await DisplayAlert("result", vm.Result, "OK");
 
 
-            var vm = new CalculateViewModel(Configuration.BaseUri, Configuration.AccessToken);
-            vm.Number1 = Convert.ToInt32(Num1.Text);
-            vm.Number2 = Convert.ToInt32(Num2.Text);
+        //}
+
+        //async void OnButtonClicked2(object sender, EventArgs args)
+        //{
+
+
+        //    var vm = new CalculateViewModel(Configuration.BaseUri, Configuration.AccessToken);
+        //    //vm.Number1 = Convert.ToInt32(Num1.Text);
+        //    //vm.Number2 = Convert.ToInt32(Num2.Text);
 
 
 
 
-            await vm.PowerExecute();
+        //    //await vm.PowerExecute();
 
-            await DisplayAlert("result", vm.Result, "OK");
+        //    //await DisplayAlert("result", vm.Result, "OK");
 
 
-        }
+        //}
 
 
     }

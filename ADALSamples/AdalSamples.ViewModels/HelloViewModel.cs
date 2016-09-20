@@ -32,10 +32,8 @@ namespace AdalSamples.ViewModels
 
         public async Task LoadData()
         {
-            this.IsBusy = true;
             var client = new HelloClient(this.WebApiUri, this.AccessToken);
             this.ResponseString = await client.SayHello();
-            this.IsBusy = false;
         }
 
     }

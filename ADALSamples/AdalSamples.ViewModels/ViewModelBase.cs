@@ -7,29 +7,10 @@ using System.Threading.Tasks;
 
 namespace AdalSamples.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : GalaSoft.MvvmLight.ViewModelBase
     {
-        private bool _isBusy = false;
         private string _webApiUri;
         private string _accessToken;
-
-        public bool IsBusy
-        {
-            get
-            {
-                return _isBusy;
-            }
-
-            set
-            {
-                if (_isBusy != value)
-                {
-                    _isBusy = value;
-                    RaisePropertyChanged("IsBusy");
-                }
-            }
-        }
-
 
 
         public string WebApiUri
@@ -60,19 +41,12 @@ namespace AdalSamples.ViewModels
             }
         }
 
-        public ViewModelBase(string webApiUri, string accessToken)
+        public ViewModelBase() : base() { }
+        public ViewModelBase(string webApiUri, string accessToken): base()
         {
             this.AccessToken = accessToken;
             this.WebApiUri = webApiUri;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected virtual void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName) { });
-
-        }
     }
 }

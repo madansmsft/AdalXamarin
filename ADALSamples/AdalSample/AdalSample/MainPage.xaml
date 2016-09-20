@@ -7,15 +7,15 @@
 
   
   <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0"  />
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 10, 0, 0"  />
   </ContentPage.Padding>
 
   <StackLayout>
-    <Label Text="Hello ADAL!"
+    <Label Text="Welcome to Xamarin ADAL Sample!"
          VerticalOptions="Center"
          HorizontalOptions="Center" />
 
-    <Button x:Name="button1" Text="Login" Clicked="OnButtonClicked"/>
+    <Button x:Name="button1" Text="Click here to Login" Clicked="OnButtonClicked"/>
     
   </StackLayout>
 

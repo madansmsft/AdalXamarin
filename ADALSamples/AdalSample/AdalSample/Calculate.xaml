@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AdalSample.Calculate">
+             x:Class="AdalSample.Calculate" x:Name="parent"
+             >
 
+  
+  
+    
   <StackLayout>
 
-    <Entry Placeholder="Number1" Text="Numeric"  x:Name="Num1"/>
-    <Entry Placeholder="Number2" Text="Numeric"  x:Name="Num2"/>
     
-    <Button x:Name="Add" Text="Add" Clicked="OnButtonClicked"/>
-    <Button x:Name="Power" Text="Power" Clicked="OnButtonClicked2"/>
+    <Label Text="{Binding Path=Number1}"/>
+    <Slider x:Name="slider1" Minimum="0" Maximum="100"  Value="{Binding Path=Number1, Mode=TwoWay}"/>
+    <Label Text="{Binding Path=Number2}"/>
+    <Slider Minimum="0" Maximum="100"  x:Name="slider2" Value="{Binding Path=Number2, Mode=TwoWay}"/>
+    <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding Path=IsBusy}" /> 
+    <Button x:Name="Add" Text="Add" Command="{Binding Path=AddNumbersCommand}"/>
+    <Button x:Name="Power" Text="Power" Command="{Binding Path=PowerCommand}"/>
 
   </StackLayout>
   

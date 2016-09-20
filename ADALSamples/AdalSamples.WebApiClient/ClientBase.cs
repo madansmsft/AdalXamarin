@@ -29,7 +29,7 @@ namespace AdalSamples.WebApiClient
         }
 
 
-        protected async Task<T> GetAsyncWithQueyString<T>(string actionName, Dictionary<string, string> queryString, params object[] parameters)
+        protected async Task<T> GetAsyncWithQueryString<T>(string actionName, Dictionary<string, string> queryString, params object[] parameters)
         {
             HttpResponseMessage response = null;
 
